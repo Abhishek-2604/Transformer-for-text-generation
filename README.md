@@ -1,7 +1,7 @@
-# Transformer based text generation
+# Transformer with training pipeline for text generation
 
 A autoregressive transformer
-for language modeling, trained on WikiText-103.
+for language modeling.
 
 ---
 
@@ -78,7 +78,7 @@ python generate.py --checkpoint checkpoints/best.pt --prompt "The history of sci
 --context_length Sequence length                      (default: 256)
 --dropout        Dropout rate                         (default: 0.1)
 --batch_size     Batch size                           (default: 32)
---max_iters      Total training steps                 (default: 10000)
+--max_iters      Total training steps                 (default: 20000)
 --lr             Peak learning rate                   (default: 3e-4)
 --warmup_iters   LR warmup steps                      (default: 500)
 --weight_decay   AdamW weight decay                   (default: 0.1)
@@ -111,7 +111,7 @@ python train.py --n_layer 4 --n_embd 256 --n_head 4 --max_iters 5000 --batch_siz
 ## File layout
 
 ```
-TRANsFoRMEr-Text-generation-with-temperature/
+Transformer-for-text-generation/
 ├── model.py          # architecture (attention, MLP, blocks)
 ├── data.py           # Data loading & tokenization
 ├── train.py          # Training loop, LR schedule, checkpointing
