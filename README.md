@@ -5,34 +5,6 @@ for language modeling.
 
 ---
 
-## Architecture
-
-```
-Input tokens
-    │
-    ▼
-Token Embeddings (vocab_size → n_embd)
-    +
-Position Embeddings (context_length → n_embd)
-    │
-    ▼
-Dropout
-    │
-    ▼  ┌─────────────────────────────────────────────┐
-    │  │  Transformer Block  × n_layer               │
-    │  │                                             │
-    │  │  x = x + CausalSelfAttention(LayerNorm(x)) │
-    │  │  x = x + MLP(LayerNorm(x))                  │
-    │  └─────────────────────────────────────────────┘
-    │
-    ▼
-Final LayerNorm
-    │
-    ▼
-LM Head (n_embd → vocab_size)  [weights tied to token embeddings]
-    │
-    ▼
-Cross-Entropy Loss (training) / Softmax Sampling (inference)
 ```
 
 ### Default config (~22M parameters)
