@@ -5,7 +5,7 @@ for language modeling.
 
 ---
 
-```
+
 
 ### Default config (~22M parameters)
 | Param            | Value |
